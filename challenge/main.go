@@ -13,6 +13,8 @@ func NewDay(day int) Challenge {
 		handler = NewDayOne()
 	case 2:
 		handler = NewDayTwo()
+	case 3:
+		handler = NewDayThree()
 	}
 
 	return handler

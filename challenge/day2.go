@@ -52,10 +52,8 @@ func (d *DayTwo) PartOne() int {
 	return invalid_sum
 }
 
-var regexes map[int]*regexp.Regexp
-
 func (d *DayTwo) PartTwo() int {
-	regexes = map[int]*regexp.Regexp{}
+	regexes := map[int]*regexp.Regexp{}
 
 	id_regex, _ := regexp.Compile("([0-9]+)-([0-9]+)")
 
@@ -77,7 +75,7 @@ func (d *DayTwo) PartTwo() int {
 		id_split:
 			for i := 2; i <= digits; i++ {
 				if digits%i == 0 {
-					regex := findOrCompileRegex(digits / i)
+					regex := findOrCompileRegex(regexes, digits/i)
 
 					result := regex.FindAllStringSubmatch(string_id, i)
 
@@ -99,7 +97,7 @@ func (d *DayTwo) PartTwo() int {
 	return invalid_sum
 }
 
-func findOrCompileRegex(digits int) *regexp.Regexp {
+func findOrCompileRegex(regexes map[int]*regexp.Regexp, digits int) *regexp.Regexp {
 	existing, ok := regexes[digits]
 	if ok {
 		return existing
