@@ -1,4 +1,4 @@
-package challenge
+package puzzle
 
 import (
 	"os"

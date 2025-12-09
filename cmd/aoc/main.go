@@ -4,7 +4,7 @@ import (
 	"flag"
 	"fmt"
 
-	"github.com/adamcreekroad/advent-of-code-2025/challenge"
+	"github.com/adamcreekroad/advent-of-code-2025/puzzle"
 )
 
 var day int
@@ -20,7 +20,7 @@ func init() {
 func main() {
 	fmt.Printf("Running day %d part %d...\n\n", day, part)
 
-	handler := challenge.NewDay(day)
+	handler := puzzle.NewDay(day)
 
 	var result int
 

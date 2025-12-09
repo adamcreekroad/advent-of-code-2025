@@ -1,12 +1,12 @@
-package challenge
+package puzzle
 
-type Challenge interface {
+type Puzzle interface {
 	PartOne() int
 	PartTwo() int
 }
 
-func NewDay(day int) Challenge {
-	var handler Challenge
+func NewDay(day int) Puzzle {
+	var handler Puzzle
 
 	switch day {
 	case 1:
@@ -15,6 +15,8 @@ func NewDay(day int) Challenge {
 		handler = NewDayTwo()
 	case 3:
 		handler = NewDayThree()
+	case 4:
+		handler = NewDayFour()
 	}
 
 	return handler
