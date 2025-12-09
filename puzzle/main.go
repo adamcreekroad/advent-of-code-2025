@@ -17,6 +17,8 @@ func NewDay(day int) Puzzle {
 		handler = NewDayThree()
 	case 4:
 		handler = NewDayFour()
+	case 5:
+		handler = NewDayFive()
 	}
 
 	return handler
